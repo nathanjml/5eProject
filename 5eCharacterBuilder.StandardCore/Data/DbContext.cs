@@ -9,7 +9,7 @@ namespace _5eCharacterBuilder.StandardCore.Data
     public class DbContext : IDbContext
     {
 
-        private SQLiteAsyncConnection _database;
+        private readonly SQLiteAsyncConnection _database;
         public DbContext(string dbPath)
         {
             _database = new SQLiteAsyncConnection(dbPath, SQLiteOpenFlags.Create |

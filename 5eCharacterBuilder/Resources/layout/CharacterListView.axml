@@ -8,11 +8,11 @@
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:text="Character Name"
-        android:textSize="12" />
+        android:textSize="12dp" />
     <TextView
         android:id="@+id/PlayerNameTextView"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:text="Player Name"
-        android:textSize="9"/>
+        android:textSize="9dp" />
 </LinearLayout>

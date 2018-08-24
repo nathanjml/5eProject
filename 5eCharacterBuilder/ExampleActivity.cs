@@ -21,18 +21,10 @@ namespace _5eCharacterBuilder
             ViewModel = new CharacterMetaData();
         }
 
-        protected override void OnCreate(Bundle savedInstanceState)
-        {
-            base.OnCreate(savedInstanceState);
-
-            //important stuff goes here I think.
-        }
-
-        public async override Task SaveAsync()
+        public override async Task SaveAsync()
         {
             var db = App.Resolve<IDbContext>();
             await db.SaveItemAsync(ViewModel as CharacterMetaData);
-            return;
         }
     }
 }

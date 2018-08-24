@@ -28,7 +28,7 @@ namespace _5eCharacterBuilder
             {
                 Configure();
             }
-            base.OnCreate(savedInstanceState);
+            //base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
             Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
