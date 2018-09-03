@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using _5eCharacterBuilder.StandardCore.Configuration;
 using _5eCharacterBuilder.StandardCore.Settings;
+using _5eCharacterBuilder.Utilities;
 using Android;
 using Android.App;
 using Android.Content;
@@ -14,6 +16,7 @@ using Android.Support.V4.View;
 using Android.Support.V4.Widget;
 using Android.Support.V7.App;
 using Android.Views;
+using Android.Widget;
 using SimpleInjector;
 
 namespace _5eCharacterBuilder
@@ -43,6 +46,22 @@ namespace _5eCharacterBuilder
 
             NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
             navigationView.SetNavigationItemSelectedListener(this);
+
+            var _characters = new List<ViewModels.Character>();
+            _characters.Add(new ViewModels.Character()
+            {
+                Name = "Stevie Rogue",
+                PlayerName = "Steve D. Mann"
+            });
+            _characters.Add(new ViewModels.Character()
+            {
+                Name = "Amasha Vren, legend of the citidel",
+                PlayerName = "Carly Sue"
+            });
+
+            var listView = FindViewById<ListView>(Resource.Id.CharacterListView);
+            var adapter = new ListViewAdapter(this, _characters);
+            listView.Adapter = adapter;
         }
 
         private void Configure()
