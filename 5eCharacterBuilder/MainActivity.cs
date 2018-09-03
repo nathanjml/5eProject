@@ -21,7 +21,7 @@ using SimpleInjector;
 
 namespace _5eCharacterBuilder
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
+    //[Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
     public class MainActivity : AppCompatActivity, NavigationView.IOnNavigationItemSelectedListener
     { 
         private bool IsInitialized = false;
@@ -44,8 +44,8 @@ namespace _5eCharacterBuilder
             drawer.AddDrawerListener(toggle);
             toggle.SyncState();
 
-            NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
-            navigationView.SetNavigationItemSelectedListener(this);
+            //NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
+           // navigationView.SetNavigationItemSelectedListener(this);
 
             var _characters = new List<ViewModels.Character>();
             _characters.Add(new ViewModels.Character()

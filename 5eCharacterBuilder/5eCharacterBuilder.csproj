@@ -61,7 +61,7 @@
     <Compile Include="App.cs" />
     <Compile Include="BaseActivity.cs" />
     <Compile Include="ExampleActivity.cs" />
-    <Compile Include="ExampleActivityHandler.cs" />
+    <Compile Include="Handlers\ExampleActivityHandler.cs" />
     <Compile Include="Handlers\IHandler.cs" />
     <Compile Include="Handlers\NoHandle.cs" />
     <Compile Include="MainActivity.cs" />

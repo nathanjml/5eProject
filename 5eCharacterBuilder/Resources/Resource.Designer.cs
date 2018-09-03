@@ -2369,11 +2369,11 @@ namespace _5eCharacterBuilder
 			// aapt resource value: 0x7f080033
 			public const int CTRL = 2131230771;
 			
-			// aapt resource value: 0x7f080091
-			public const int CharacterListView = 2131230865;
+			// aapt resource value: 0x7f080090
+			public const int CharacterListView = 2131230864;
 			
-			// aapt resource value: 0x7f08008f
-			public const int CharacterNameTextView = 2131230863;
+			// aapt resource value: 0x7f08008e
+			public const int CharacterNameTextView = 2131230862;
 			
 			// aapt resource value: 0x7f080034
 			public const int FUNCTION = 2131230772;
@@ -2381,8 +2381,8 @@ namespace _5eCharacterBuilder
 			// aapt resource value: 0x7f080035
 			public const int META = 2131230773;
 			
-			// aapt resource value: 0x7f080090
-			public const int PlayerNameTextView = 2131230864;
+			// aapt resource value: 0x7f08008f
+			public const int PlayerNameTextView = 2131230863;
 			
 			// aapt resource value: 0x7f080036
 			public const int SHIFT = 2131230774;
@@ -2513,6 +2513,9 @@ namespace _5eCharacterBuilder
 			// aapt resource value: 0x7f080094
 			public const int container = 2131230868;
 			
+			// aapt resource value: 0x7f080091
+			public const int contentFab = 2131230865;
+			
 			// aapt resource value: 0x7f080066
 			public const int contentPanel = 2131230822;
 			
@@ -2576,8 +2579,8 @@ namespace _5eCharacterBuilder
 			// aapt resource value: 0x7f080072
 			public const int expanded_menu = 2131230834;
 			
-			// aapt resource value: 0x7f08008e
-			public const int fab = 2131230862;
+			// aapt resource value: 0x7f08008d
+			public const int fab = 2131230861;
 			
 			// aapt resource value: 0x7f080050
 			public const int fill = 2131230800;
@@ -2680,9 +2683,6 @@ namespace _5eCharacterBuilder
 			
 			// aapt resource value: 0x7f0800b9
 			public const int nav_slideshow = 2131230905;
-			
-			// aapt resource value: 0x7f08008c
-			public const int nav_view = 2131230860;
 			
 			// aapt resource value: 0x7f08009a
 			public const int navigation_header_container = 2131230874;
@@ -2885,8 +2885,8 @@ namespace _5eCharacterBuilder
 			// aapt resource value: 0x7f08006f
 			public const int title_template = 2131230831;
 			
-			// aapt resource value: 0x7f08008d
-			public const int toolbar = 2131230861;
+			// aapt resource value: 0x7f08008c
+			public const int toolbar = 2131230860;
 			
 			// aapt resource value: 0x7f08003e
 			public const int top = 2131230782;

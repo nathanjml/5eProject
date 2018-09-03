@@ -14,6 +14,7 @@ using Android.Widget;
 
 namespace _5eCharacterBuilder
 {
+    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
     public class ExampleActivity : BaseActivity
     {
         public ExampleActivity()
