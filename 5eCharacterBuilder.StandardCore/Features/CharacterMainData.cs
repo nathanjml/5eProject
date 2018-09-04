@@ -9,8 +9,9 @@ namespace _5eCharacterBuilder.StandardCore.Features
     {
         public int Id { get; set; }
         public int StrScore { get; set; }
-        public int DexScrore { get; set; }
+        public int DexScore { get; set; }
         public int ConScore { get; set; }
+        public int IntScore { get; set; }
         public int WisScore { get; set; }
         public int ChaScore { get; set; }
         public int Level { get; set; }

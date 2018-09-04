@@ -28,7 +28,7 @@ namespace _5eCharacterBuilder
             {
                 Configure();
             }
-            //base.OnCreate(savedInstanceState);
+            base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
             Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
@@ -132,7 +132,7 @@ namespace _5eCharacterBuilder
             settings.Version = "v0.1";
             settings.SupportEmail = "genericsupport@support.live";
             var app = System.Environment.GetFolderPath(System.Environment.SpecialFolder.ApplicationData);
-            settings.DbPath = Path.Combine(app, "5edata.db3");
+            //settings.DbPath = Path.Combine(app, "5edata.db3");
 
             return settings;
         }
