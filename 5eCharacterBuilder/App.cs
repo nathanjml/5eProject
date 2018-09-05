@@ -15,12 +15,14 @@ namespace _5eCharacterBuilder
 {
     public static class App
     {
+
         public static Func<Type, object> GetInstance { get; private set; }
         public static IMasterContext _MasterContext { get; private set; }
         public static void Initialize(Func<Type, object> getInstance)
         {
             GetInstance = getInstance;
             _MasterContext = Resolve<IMasterContext>();
+
         }
 
         public static T Resolve<T>()

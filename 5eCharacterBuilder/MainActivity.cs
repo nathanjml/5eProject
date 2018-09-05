@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Reflection;
 using _5eCharacterBuilder.StandardCore.Configuration;
+using _5eCharacterBuilder.StandardCore.Data;
 using _5eCharacterBuilder.StandardCore.Settings;
 using _5eCharacterBuilder.Utilities;
 using Android;
@@ -70,6 +72,9 @@ namespace _5eCharacterBuilder
             var settings = ConfigureAppSettings();
             container.ConfigureCore(settings);
             App.Initialize(container.GetInstance);
+            ModelBuilder b = new ModelBuilder();
+            b.FromAssemblies(typeof(ModelBuilder).Assembly);
+
 
             container.Verify();
         }
