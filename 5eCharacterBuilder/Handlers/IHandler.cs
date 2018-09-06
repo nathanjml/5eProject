@@ -14,7 +14,7 @@ namespace _5eCharacterBuilder.Handlers
 {
     public interface IHandler
     {
-        void AddContext(Activity activity);
+        void AddContext(BaseActivity activity);
         void RunContextBinding();
     }
 }

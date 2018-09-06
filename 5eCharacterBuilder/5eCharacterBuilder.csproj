@@ -67,7 +67,6 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestActivityHandler.cs" />
     <Compile Include="Utilities\ListViewAdapter.cs" />
     <Compile Include="ViewModels\Character.cs" />
   </ItemGroup>

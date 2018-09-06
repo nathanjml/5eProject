@@ -1,12 +1,15 @@
 ﻿using _5eCharacterBuilder.StandardCore.Data;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace _5eCharacterBuilder.StandardCore.Features
 {
+    [DbTable]
     public class CharacterMainData : IEntity
     {
+        [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public int StrScore { get; set; }
         public int DexScrore { get; set; }

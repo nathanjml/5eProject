@@ -18,7 +18,7 @@ namespace _5eCharacterBuilder
 {
     public abstract class BaseActivity : AppCompatActivity
     {
-        protected IEntity ViewModel { get; set; }
+        public IEntity ViewModel { get; set; }
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);

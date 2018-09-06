@@ -72,8 +72,8 @@ namespace _5eCharacterBuilder
             var settings = ConfigureAppSettings();
             container.ConfigureCore(settings);
             App.Initialize(container.GetInstance);
-            ModelBuilder b = new ModelBuilder();
-            b.FromAssemblies(typeof(ModelBuilder).Assembly);
+            //ModelBuilder b = new ModelBuilder();
+            //b.FromAssemblies(typeof(ModelBuilder).Assembly);
 
 
             container.Verify();

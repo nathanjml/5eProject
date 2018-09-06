@@ -21,10 +21,10 @@ namespace _5eCharacterBuilder.Handlers
 {
     public class ExampleActivityHandler : IHandler
     {
-        private Activity _activity;
+        private BaseActivity _activity;
         private bool IsInitialized = false;
 
-        public void AddContext(Activity activity)
+        public void AddContext(BaseActivity activity)
         {
             _activity = activity;
         }
@@ -74,7 +74,7 @@ namespace _5eCharacterBuilder.Handlers
             container.ConfigureCore(settings);
             App.Initialize(container.GetInstance);
 
-            ModelBuilder b = new ModelBuilder();
+            ModelBuilder b = new ModelBuilder(App.Resolve<IDbContext>());
             b.FromAssemblies(typeof(ModelBuilder).Assembly);
 
 
