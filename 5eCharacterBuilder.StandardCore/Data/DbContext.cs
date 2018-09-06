@@ -16,7 +16,7 @@ namespace _5eCharacterBuilder.StandardCore.Data
                                                   SQLiteOpenFlags.ReadWrite |
                                                   SQLiteOpenFlags.FullMutex);
         }
-        Task IDbContext.CreateOrUpdateTable<T>()
+        public Task CreateOrUpdateTable<T>() where T : IEntity, new() 
         {
             return _database.CreateTableAsync<T>();
         }

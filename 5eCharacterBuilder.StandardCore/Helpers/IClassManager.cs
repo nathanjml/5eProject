@@ -9,5 +9,6 @@ namespace _5eCharacterBuilder.StandardCore.Helpers
         void SetLevel(int level);
         void SetClass(string targetClass);
         void SetRace(string targetRace);
+        
     }
 }

@@ -21,6 +21,7 @@ namespace _5eCharacterBuilder
         public ExampleActivity()
         {
             ViewModel = new CharacterMetaData();
+            //8====D
         }
 
         public override async Task SaveAsync()

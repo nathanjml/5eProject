@@ -16,6 +16,8 @@ using Android.Widget;
 using _5eCharacterBuilder.StandardCore.Settings;
 using System.IO;
 using SimpleInjector;
+using _5eCharacterBuilder.StandardCore.Helpers;
+using _5eCharacterBuilder.StandardCore.Features;
 
 namespace _5eCharacterBuilder.Handlers
 {
@@ -23,12 +25,16 @@ namespace _5eCharacterBuilder.Handlers
     {
         private BaseActivity _activity;
         private bool IsInitialized = false;
+        private IDbContext _dbContext;
+        private IMasterContext _masterContext;
+        private ListView listView;
+        private ListViewAdapter adapter;
+        private List<ViewModels.Character> characters;
 
         public void AddContext(BaseActivity activity)
         {
             _activity = activity;
         }
-
 
         public void RunContextBinding()
         {
@@ -37,16 +43,18 @@ namespace _5eCharacterBuilder.Handlers
                 Configure();
                 IsInitialized = true;
             }
+            _dbContext = App.Resolve<IDbContext>();
+            _masterContext = App.Resolve<IMasterContext>();
 
             _activity.SetContentView(Resource.Layout.activity_main);
 
-            var _characters = new List<ViewModels.Character>();
-            _characters.Add(new ViewModels.Character()
+            characters = new List<ViewModels.Character>();
+            characters.Add(new ViewModels.Character()
             {
                 Name = "Stevie Rogue",
                 PlayerName = "Steve D. Mann"
             });
-            _characters.Add(new ViewModels.Character()
+            characters.Add(new ViewModels.Character()
             {
                 Name = "Amasha Vren, legend of the citidel",
                 PlayerName = "Carly Sue"
@@ -55,16 +63,30 @@ namespace _5eCharacterBuilder.Handlers
             FloatingActionButton fab = _activity.FindViewById<FloatingActionButton>(Resource.Id.fab);
             fab.Click += FabOnClick;
 
-            var listView = _activity.FindViewById<ListView>(Resource.Id.CharacterListView);
-            var adapter = new ListViewAdapter(_activity, _characters);
+            listView = _activity.FindViewById<ListView>(Resource.Id.CharacterListView);
+            adapter = new ListViewAdapter(_activity, characters);
             listView.Adapter = adapter;
         }
 
-        private void FabOnClick(object sender, EventArgs eventArgs)
+        private async void FabOnClick(object sender, EventArgs eventArgs)
         {
-            View view = (View)sender;
-            Snackbar.Make(view, "Replace with Create Character Option", Snackbar.LengthLong)
-                .SetAction("Action", (Android.Views.View.IOnClickListener)null).Show();
+            var character = new ViewModels.Character()
+            {
+                Name = "New Character",
+                PlayerName = "Mom",
+            };
+
+            var entity = new CharacterMetaData(); 
+
+            entity.CharacterName = character.Name;
+            entity.PlayerName = character.PlayerName;
+
+            await _dbContext.SaveItemAsync(entity);
+            character.Id = entity.Id;
+
+            characters.Add(character);
+            adapter.NotifyDataSetChanged();
+            
         }
 
         private void Configure()
@@ -76,7 +98,7 @@ namespace _5eCharacterBuilder.Handlers
 
             ModelBuilder b = new ModelBuilder(App.Resolve<IDbContext>());
             b.FromAssemblies(typeof(ModelBuilder).Assembly);
-
+            b.Build();
 
             container.Verify();
         }
