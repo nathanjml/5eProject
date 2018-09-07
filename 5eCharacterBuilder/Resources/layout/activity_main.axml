@@ -11,6 +11,43 @@
   <include
     layout="@layout/app_bar_main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" />
+    android:layout_height="match_parent"/>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+		<TextView
+			android:id="@+id/someTextView"
+		android:text="Some Text!"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"/>
+
+	</LinearLayout>
 
 </android.support.v4.widget.DrawerLayout>
+
+<!-- Code to implement into Activity:
+
+public override bool OnCreateOptionsMenu(IMenu menu)
+{
+  //change main_compat_menu
+	MenuInflater.Inflate(Resource.Menu.ClassEntryView, menu);
+	return base.OnCreateOptionsMenu(menu);
+}
+
+
+public override bool OnOptionsItemSelected(IMenuItem item)
+{
+	switch (item.ItemId) {
+	case Resource.Id.action_edit:
+		Toast.MakeText (this, "You pressed edit action!", ToastLength.Short).Show ();
+		break;
+	case Resource.Id.action_save:
+		Toast.MakeText (this, "You pressed save action!", ToastLength.Short).Show ();
+		break;
+	}
+	return base.OnOptionsItemSelected(item);
+}
+
+-->

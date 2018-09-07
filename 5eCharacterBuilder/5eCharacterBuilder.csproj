@@ -60,7 +60,10 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="BaseActivity.cs" />
+    <Compile Include="ClassActivity.cs" />
+    <Compile Include="Configuration\SimpleInjectorConfiguration.cs" />
     <Compile Include="ExampleActivity.cs" />
+    <Compile Include="Handlers\ClassActivityHandler.cs" />
     <Compile Include="Handlers\ExampleActivityHandler.cs" />
     <Compile Include="Handlers\IHandler.cs" />
     <Compile Include="Handlers\NoHandle.cs" />
@@ -138,6 +141,11 @@
       <Project>{2B0FD6F2-B05F-4084-A0DC-873DDC618182}</Project>
       <Name>5eCharacterBuilder.StandardCore</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\ClassActivityView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

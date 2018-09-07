@@ -29,7 +29,5 @@ namespace _5eCharacterBuilder
             var db = App.Resolve<IDbContext>();
             await db.SaveItemAsync(ViewModel as CharacterMetaData);
         }
-
-
     }
 }

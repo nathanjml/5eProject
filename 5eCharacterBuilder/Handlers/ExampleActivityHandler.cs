@@ -18,6 +18,7 @@ using System.IO;
 using SimpleInjector;
 using _5eCharacterBuilder.StandardCore.Helpers;
 using _5eCharacterBuilder.StandardCore.Features;
+using _5eCharacterBuilder.Configuration;
 
 namespace _5eCharacterBuilder.Handlers
 {
@@ -51,11 +52,13 @@ namespace _5eCharacterBuilder.Handlers
             characters = new List<ViewModels.Character>();
             characters.Add(new ViewModels.Character()
             {
+                Id = 0,
                 Name = "Stevie Rogue",
                 PlayerName = "Steve D. Mann"
             });
             characters.Add(new ViewModels.Character()
             {
+                Id = 0,
                 Name = "Amasha Vren, legend of the citidel",
                 PlayerName = "Carly Sue"
             });
@@ -66,6 +69,16 @@ namespace _5eCharacterBuilder.Handlers
             listView = _activity.FindViewById<ListView>(Resource.Id.CharacterListView);
             adapter = new ListViewAdapter(_activity, characters);
             listView.Adapter = adapter;
+
+            listView.ItemClick += ListView_ItemClick;
+        }
+
+        private void ListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            var item = adapter[e.Position];
+            _masterContext.DataReferenceId = item.Id;
+            //Start up a new activity
+            _activity.StartActivity(typeof(ClassActivity));
         }
 
         private async void FabOnClick(object sender, EventArgs eventArgs)
@@ -94,6 +107,7 @@ namespace _5eCharacterBuilder.Handlers
             var container = new Container();
             var settings = ConfigureAppSettings();
             container.ConfigureCore(settings);
+            container.ConfigureXamarin();
             App.Initialize(container.GetInstance);
 
             ModelBuilder b = new ModelBuilder(App.Resolve<IDbContext>());

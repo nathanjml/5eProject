@@ -60,6 +60,12 @@ namespace _5eCharacterBuilder
             base.OnBackPressed();
         }
 
+        protected override void OnDestroy()
+        {
+            SaveAsync();
+            base.OnDestroy();
+        }
+
         public abstract Task SaveAsync();
     }
 }
