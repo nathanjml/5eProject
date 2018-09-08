@@ -9,6 +9,19 @@ namespace _5eCharacterBuilder.StandardCore.Helpers
         void SetLevel(int level);
         void SetClass(string targetClass);
         void SetRace(string targetRace);
-        
+        void SetBackground(string targetBackground);
+       
+        /* Potentially Needed
+        void SetSkillProficiencies();
+        void SetSavingThrowProficiencies();
+        void SetToolProficiencies();
+        Void SetLanguageProficiencies();
+        Void SetOtherProficiencies();
+        Void SetFeat();
+        Void SetCharacterName();  
+        Void SetPlayerName();
+        Void AddItem();
+        Void RemoveItem();
+        */
     }
 }

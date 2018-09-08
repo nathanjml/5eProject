@@ -23,6 +23,7 @@ namespace _5eCharacterBuilder.StandardCore.Features
         public string Race { get; set; }
         public string Class { get; set; }
         public string Theme { get; set; }
+        public string Background { get; set; }
         //Calculated fields (hp, stamina, etc. not included here).
     }
 }

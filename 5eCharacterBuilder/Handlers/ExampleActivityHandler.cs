@@ -124,7 +124,7 @@ namespace _5eCharacterBuilder.Handlers
             settings.Version = "v0.1";
             settings.SupportEmail = "genericsupport@support.live";
             var app = System.Environment.GetFolderPath(System.Environment.SpecialFolder.ApplicationData);
-            settings.DbPath = Path.Combine(app, "5edata.db3");
+            settings.DbPath = Path.Combine(app, "", "5edata.db3");
 
             return settings;
         }
